@@ -1,2 +1,3 @@
-# giphy
-Main Project Repository
+# Giphy
+
+Here you can learn about our project
