@@ -4,9 +4,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "lint": "eslint src/index.js"
   },
   "author": "Team-8",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "eslint": "^9.6.0"
+  }
 }
