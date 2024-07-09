@@ -1,0 +1,36 @@
+
+
+  body {
+    background: url('../images/main-backround.jpg') repeat;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px;
+    border-right: 1px solid black;
+  }
+
+  .nav-link {
+    color: brown;
+    margin: 5px;
+    
+  }
+
+  #container {
+    flex: 1;
+    padding: 15px;
+  }
+
+  footer {
+    padding: 20px;
+
+  }
