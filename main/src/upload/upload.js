@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             uploadStatus.textContent = `Uploading`;
+            //uploadStatus.img() = `Uploading`;
+
             const response = await fetch(url, {
                 method: 'POST',
                 body: formData
