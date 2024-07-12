@@ -21,7 +21,7 @@ async function fetchSearchingGifs(query) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        gifContainer.innerHTML = ''; // Clear previous results
+        gifContainer.innerHTML = '';
         data.data.forEach(gif => {
             const img = document.createElement('img');
             img.src = gif.images.fixed_height.url;
