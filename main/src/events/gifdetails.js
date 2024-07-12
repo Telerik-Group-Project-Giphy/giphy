@@ -32,4 +32,4 @@ export function addImageListener(gifId) {
         console.error('Error fetching GIF details:', error);
         detailsContainer.textContent = 'Failed to load GIF details.';
       }
-    }
+    } //просто ги преместих в друга папка за да е по-подредено

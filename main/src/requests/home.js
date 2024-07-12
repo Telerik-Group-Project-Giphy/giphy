@@ -1,5 +1,5 @@
 import { addImageListener } from "../events/gifdetails.js";
-// import { addToFavorites } from "../events/addFavorites.js";
+import { addToFavorites } from "../events/addFavorites.js";
  
 document.addEventListener('DOMContentLoaded', () => {
     const homeButton = document.getElementById('home-button');
@@ -29,7 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
           const img = document.createElement('img');
           img.src = gif.images.fixed_height.url;
           img.dataset.gifId = gif.id;
-          gifContainer.appendChild(img);
+
+          const addToFavoritesButton = document.createElement('button');
+          addToFavoritesButton.textContent = 'Add to Favorites';
+          addToFavoritesButton.addEventListener('click', () => addToFavorites(gif.id));
+
+          const gifWrapper = document.createElement('div'); // добавих обвивка която слага бутон на гифа 
+          gifWrapper.appendChild(img);
+          gifWrapper.appendChild(addToFavoritesButton);
+          gifContainer.appendChild(gifWrapper);
         });
         addImageListener();
       } catch (error) {
