@@ -1,3 +1,7 @@
+import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
+// import { addToFavorites } from "../events/addFavorites.js";
+
+
 document.addEventListener('DOMContentLoaded', () => {
 const trendingButton = document.getElementById("trending-button");
 const gifContainer = document.getElementById("gifContainer");
@@ -15,6 +19,7 @@ const loadTrending = async () => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const fetchedData = await response.json();
+        addImageListener();
         return fetchedData;
     } catch (error) {
         console.error('Error fetching GIFs:', error);
@@ -28,6 +33,7 @@ const loadTrending = async () => {
         data.data.forEach(gif => {
         const img = document.createElement('img');
         img.src = gif.images.fixed_height.url;
+        img.dataset.gifId = gif.id;
         gifContainer.appendChild(img);
   })
 }

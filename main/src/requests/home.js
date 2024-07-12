@@ -1,4 +1,5 @@
-import { addImageListener, displayGifDetails } from "./gifdetails.js";
+import { addImageListener } from "../events/gifdetails.js";
+// import { addToFavorites } from "../events/addFavorites.js";
  
 document.addEventListener('DOMContentLoaded', () => {
     const homeButton = document.getElementById('home-button');
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'EOtMOyfgb7swQVKzeUpvw3IDeR1XT48M';
  
     homeButton.addEventListener('click', () => {
-      fetchRandomGifs(5);
+      fetchRandomGifs(1); //RETURN TO 5
     });
  
     async function fetchRandomGifs(count) {

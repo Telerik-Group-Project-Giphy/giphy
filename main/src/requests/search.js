@@ -1,3 +1,6 @@
+import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
+// import { addToFavorites } from "../events/addFavorites.js";
+
 const searchButton = document.getElementById("search-button");
 
 const searchInput = document.getElementById("search");
@@ -25,8 +28,10 @@ async function fetchSearchingGifs(query) {
         data.data.forEach(gif => {
             const img = document.createElement('img');
             img.src = gif.images.fixed_height.url;
+            img.dataset.gifId = gif.id;
             gifContainer.appendChild(img);
         });
+        addImageListener();
     } catch (error) {
         console.error('Error fetching GIFs:', error);
         gifContainer.textContent = 'Failed to load GIFs.';
