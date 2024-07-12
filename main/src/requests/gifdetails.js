@@ -10,7 +10,7 @@ export function addImageListener(gifId) {
     }
   }
   export async function displayGifDetails(gifId) {
-      const detailsContainer = document.getElementById('gifDetails');
+      const detailsContainer = document.getElementById('gifContainer');
    
       const apiKey = 'EOtMOyfgb7swQVKzeUpvw3IDeR1XT48M';
      
