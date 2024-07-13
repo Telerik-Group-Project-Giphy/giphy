@@ -1,5 +1,5 @@
 import { addImageListener } from "../events/gifdetails.js";
-import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
+import { isFavorite, toggleFavorite } from "../data/manageFavorites.js";
 
 
 export const transferToHTML = (data) => {

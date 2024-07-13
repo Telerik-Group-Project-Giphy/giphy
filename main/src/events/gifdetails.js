@@ -1,4 +1,4 @@
-import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
+import { isFavorite, toggleFavorite } from "../data/manageFavorites.js";
 import { apiKey } from "../common/common.js";
 
 export function addImageListener(gifId) {

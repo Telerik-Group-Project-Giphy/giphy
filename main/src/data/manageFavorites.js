@@ -1,4 +1,4 @@
-import { addImageListener } from "./gifdetails.js";
+import { addImageListener } from "../events/gifdetails.js";
 
 export async function addToFavorites(gifId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];

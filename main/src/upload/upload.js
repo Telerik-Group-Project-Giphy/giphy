@@ -1,4 +1,4 @@
-import { apiKey } from "../common/common";
+import { apiKey } from "../common/common.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const gifFileInput = document.getElementById('gifFile');

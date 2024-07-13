@@ -1,4 +1,4 @@
-import { displayFavorites } from "../events/manageFavorites.js"
+import { displayFavorites } from "../data/manageFavorites.js"
 import { apiKey } from "../common/common.js";
 
 document.addEventListener('DOMContentLoaded', () => {
