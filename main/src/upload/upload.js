@@ -1,10 +1,10 @@
+import { apiKey } from "../common/common";
+
 document.addEventListener('DOMContentLoaded', () => {
     const gifFileInput = document.getElementById('gifFile');
     const uploadGifButton = document.getElementById('uploadGif');
     const uploadStatus = document.getElementById('uploadStatus');
 
-    const apiKey = 'EOtMOyfgb7swQVKzeUpvw3IDeR1XT48M';
-  
     uploadGifButton.addEventListener('click', () => {
       const file = gifFileInput.files[0];
       if (file) {
@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
           storedGifIds = [gifId];
         }
         localStorage.setItem('uploadedGifIds', storedGifIds.join(','));
-  
         uploadStatus.textContent = 'GIF uploaded successfully!';
       } catch (error) {
         console.error('Error uploading GIF:', error);

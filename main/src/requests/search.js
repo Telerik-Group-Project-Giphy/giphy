@@ -1,17 +1,8 @@
-import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
-import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
 import { transferToHTML } from "../views/renderContainers.js";
+import { apiKey } from "../common/common.js";
 
 const searchButton = document.getElementById("search-button");
-
 const searchInput = document.getElementById("search");
-
-// searchButton.addEventListener('click', () => {
-//     const inputValue = searchInput.value;
-//     if (inputValue) {
-//         fetchSearchingGifs(inputValue);
-//     }
-// });
 
 searchButton.addEventListener('click', async () => {
     const inputValue = searchInput.value;
@@ -20,9 +11,6 @@ searchButton.addEventListener('click', async () => {
        transferToHTML(data);
     }
 });
-
-
-const apiKey = 'EOtMOyfgb7swQVKzeUpvw3IDeR1XT48M';
 
 async function fetchSearchingGifs(query) {
 
@@ -41,3 +29,12 @@ async function fetchSearchingGifs(query) {
         gifContainer.textContent = 'Failed to load GIFs.';
     }
 }
+
+//not sure if needed v.manin
+
+// searchButton.addEventListener('click', () => {
+//     const inputValue = searchInput.value;
+//     if (inputValue) {
+//         fetchSearchingGifs(inputValue);
+//     }
+// });

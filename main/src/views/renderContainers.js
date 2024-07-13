@@ -1,5 +1,7 @@
-import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
+import { addImageListener } from "../events/gifdetails.js";
 import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
+
+
 export const transferToHTML = (data) => {
     gifContainer.innerHTML = '';
     data.data.forEach(gif => {
@@ -19,7 +21,6 @@ export const transferToHTML = (data) => {
         gifWrapper.appendChild(addToFavoritesButton);
         gifContainer.appendChild(gifWrapper);
 
-        //remove from 33 to 44
     })
     addImageListener();
 };
