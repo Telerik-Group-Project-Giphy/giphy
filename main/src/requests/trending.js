@@ -10,16 +10,12 @@ const apiKey = 'EOtMOyfgb7swQVKzeUpvw3IDeR1XT48M'
 
 
 const loadTrending = async () => {
-    // const categories = getCategories();
-    
-    // return categories;
     try {
         const response = await fetch (`https://api.giphy.com/v1/gifs/trending/?api_key=${apiKey}`)
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const fetchedData = await response.json();
-        addImageListener();
         return fetchedData;
     } catch (error) {
         console.error('Error fetching GIFs:', error);
@@ -29,13 +25,14 @@ const loadTrending = async () => {
   };
 
   const transferToHTML = (data) => {
-    gifContainer.innerHTML = ''; // Clear previous results
+    gifContainer.innerHTML = ''; 
         data.data.forEach(gif => {
         const img = document.createElement('img');
         img.src = gif.images.fixed_height.url;
         img.dataset.gifId = gif.id;
         gifContainer.appendChild(img);
   })
+  addImageListener();
 }
 
 
