@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
           img.dataset.gifId = gif.id;
 
           const addToFavoritesButton = document.createElement('button');
+          addToFavoritesButton.className = 'favourites-button';
           addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
           addToFavoritesButton.addEventListener('click', () => {
             toggleFavorite(gif.id);

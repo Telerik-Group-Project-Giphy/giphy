@@ -1,3 +1,5 @@
+import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
+
 export function addImageListener(gifId) {
     const images = document.getElementsByTagName('img')
    
@@ -28,6 +30,14 @@ export function addImageListener(gifId) {
           <p><strong>Username:</strong> ${gif.username || 'N/A'} ${gifId}</p>
           <img src="${gif.images.fixed_height.url}" alt="GIF">
         `;
+        const addToFavoritesButton = document.createElement('button');
+        addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
+        addToFavoritesButton.addEventListener('click', () => {
+            toggleFavorite(gif.id);
+            addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
+        });
+        gifContainer.appendChild(addToFavoritesButton);
+        
       } catch (error) {
         console.error('Error fetching GIF details:', error);
         detailsContainer.textContent = 'Failed to load GIF details.';

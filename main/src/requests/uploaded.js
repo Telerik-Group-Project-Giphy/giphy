@@ -32,7 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
           const img = document.createElement('img');
           img.src = gif.images.fixed_height.url;
           img.dataset.gifId = gif.id;
-          gifContainer.appendChild(img);
+
+          const addToFavoritesButton = document.createElement('button');
+            addToFavoritesButton.className = 'favorite-button';
+            addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
+            addToFavoritesButton.addEventListener('click', () => {
+                toggleFavorite(gif.id);
+                addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
+            });
+            const gifWrapper = document.createElement('div');
+            gifWrapper.appendChild(img);
+            gifWrapper.appendChild(addToFavoritesButton);
+            gifContainer.appendChild(gifWrapper);
         });
         addImageListener();
       } catch (error) {

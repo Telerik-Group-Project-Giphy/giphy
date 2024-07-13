@@ -1,4 +1,3 @@
-import { addImageListener } from "../events/gifdetails.js";
 import { displayFavorites } from "../events/manageFavorites.js"
 
 document.addEventListener('DOMContentLoaded', () => {
