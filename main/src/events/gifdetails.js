@@ -30,7 +30,9 @@ export function addImageListener(gifId) {
           <p><strong>Username:</strong> ${gif.username || 'N/A'} ${gifId}</p>
           <img src="${gif.images.fixed_height.url}" alt="GIF">
         `;
-        const addToFavoritesButton = document.createElement('button');
+        
+        const addToFavoritesButton = document.createElement('button'); // the button is not selected by css because its not in a div
+        addToFavoritesButton.className = 'favorite-button'
         addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
         addToFavoritesButton.addEventListener('click', () => {
             toggleFavorite(gif.id);

@@ -1,5 +1,6 @@
 import { addImageListener } from "../events/gifdetails.js";
 import { addToFavorites, isFavorite, toggleFavorite } from "../events/manageFavorites.js";
+import { FULL_HEART, EMPTY_HEART } from "../common/common.js";
  
 document.addEventListener('DOMContentLoaded', () => {
     const homeButton = document.getElementById('home-button');
@@ -31,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
           img.dataset.gifId = gif.id;
 
           const addToFavoritesButton = document.createElement('button');
-          addToFavoritesButton.className = 'favourites-button';
-          addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
+          addToFavoritesButton.className = 'favorite-button';
+          addToFavoritesButton.textContent = isFavorite(gif.id) ? `${FULL_HEART}` : `${EMPTY_HEART}`
           addToFavoritesButton.addEventListener('click', () => {
             toggleFavorite(gif.id);
-            addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`
+            addToFavoritesButton.textContent = isFavorite(gif.id) ? `${FULL_HEART}` : `${EMPTY_HEART}`
           });
 
           const gifWrapper = document.createElement('div'); // добавих обвивка която слага бутон на гифа 

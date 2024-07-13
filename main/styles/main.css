@@ -25,12 +25,36 @@
     
   }
 
-  #container {
-    flex: 1;
-    padding: 15px;
-  }
 
-  footer {
-    padding: 20px;
+  #gifContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
 
-  }
+#gifContainer img {
+  display: block;
+  max-width: 100%;
+}
+
+#gifContainer div {
+  position: relative;
+}
+
+#gifContainer div .favorite-button { 
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  width: 110px; 
+  height: 40px; 
+  border-radius: 20px; 
+  font-size: 15px; 
+  border: none; 
+  transition: 0.3s linear; 
+  font-weight: 700; 
+  background-color: pink;
+} 
+
+#gifContainer div .favorite-button:hover { 
+  background-color: palevioletred;
+} 
