@@ -1,5 +1,5 @@
 import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
-// import { addToFavorites } from "../events/addFavorites.js";
+// import { addToFavorites } from "../events/manageFavorites.js";
 
 const searchButton = document.getElementById("search-button");
 

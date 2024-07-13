@@ -1,5 +1,5 @@
 import { addImageListener } from "../events/gifdetails.js";
-import { displayFavorites } from "../events/addFavorites.js"
+import { displayFavorites } from "../events/manageFavorites.js"
 
 document.addEventListener('DOMContentLoaded', () => {
     const favoritesButton = document.getElementById('favorites-button');
