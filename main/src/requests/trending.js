@@ -1,5 +1,5 @@
 import { addImageListener, displayGifDetails } from "../events/gifdetails.js";
-// import { addToFavorites } from "../events/manageFavorites.js";
+import { isFavorite, toggleFavorite } from "../events/manageFavorites.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
