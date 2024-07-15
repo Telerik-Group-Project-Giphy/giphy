@@ -1,5 +1,5 @@
-import { isFavorite, toggleFavorite } from "../data/manageFavorites.js";
 import { apiKey } from "../common/common.js";
+import { createFavoriteButton } from "../views/renderContainers.js";
 
 export function addImageListener(gifId) {
   const images = document.getElementsByTagName('img')
@@ -27,15 +27,15 @@ export async function displayGifDetails(gifId) {
           <p><strong>Username:</strong> ${gif.username || 'N/A'} ${gifId}</p>
           <img src="${gif.images.fixed_height.url}" alt="GIF">
         `;
-
-    const addToFavoritesButton = document.createElement('button');
-    addToFavoritesButton.className = 'favorite-button-details';
-    addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`;
-    addToFavoritesButton.addEventListener('click', () => {
-      toggleFavorite(gif.id);
-      addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`;
-    });
-    gifContainer.appendChild(addToFavoritesButton);
+    gifContainer.appendChild(createFavoriteButton(gifId));
+    // const addToFavoritesButton = document.createElement('button');
+    // addToFavoritesButton.className = 'favorite-button-details';
+    // addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`;
+    // addToFavoritesButton.addEventListener('click', () => {
+    //   toggleFavorite(gif.id);
+    //   addToFavoritesButton.textContent = isFavorite(gif.id) ? `Remove from Favorites` : `Add to favorites`;
+    // });
+    // gifContainer.appendChild(addToFavoritesButton);
 
   } catch (error) {
     console.error('Error fetching GIF details:', error);

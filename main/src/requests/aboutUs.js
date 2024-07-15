@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const aboutUsButton = document.getElementById('about-us');
     const container = document.getElementById('gifContainer');
