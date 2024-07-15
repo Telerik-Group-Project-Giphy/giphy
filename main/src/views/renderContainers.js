@@ -1,14 +1,15 @@
 import { addImageListener } from "../events/gifdetails.js";
 import { isFavorite, toggleFavorite } from "../data/manageFavorites.js";
+import { FULL_HEART, EMPTY_HEART } from "../common/common.js";
 
 export function createFavoriteButton(gifId) {
     const addToFavoritesButton = document.createElement('button');
     addToFavoritesButton.className = 'favorite-button';
-    addToFavoritesButton.textContent = isFavorite(gifId) ? 'Remove from Favorites' : 'Add to Favorites';
+    addToFavoritesButton.textContent = isFavorite(gifId) ? FULL_HEART : EMPTY_HEART;
 
     addToFavoritesButton.addEventListener('click', () => {
         toggleFavorite(gifId);
-        addToFavoritesButton.textContent = isFavorite(gifId) ? 'Remove from Favorites' : 'Add to Favorites';
+        addToFavoritesButton.textContent = isFavorite(gifId) ? FULL_HEART : EMPTY_HEART;
     });
 
     return addToFavoritesButton;
