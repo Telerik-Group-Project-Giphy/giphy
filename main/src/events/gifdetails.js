@@ -1,6 +1,9 @@
 import { apiKey } from "../common/common.js";
 import { createFavoriteButton } from "../views/renderContainers.js";
 
+/**
+ * Attaches click event listeners to all <img> elements to display GIF details.
+ */
 export function addImageListener(gifId) {
   const images = document.getElementsByTagName('img')
 
@@ -11,6 +14,11 @@ export function addImageListener(gifId) {
     });
   }
 }
+/**
+ * Fetches and displays detailed information about a GIF.
+ * @param {string} gifId - The ID of the GIF to fetch details for.
+ * @returns {Promise} A Promise that resolves when the GIF details are displayed.
+ */
 export async function displayGifDetails(gifId) {
   const detailsContainer = document.getElementById('gifContainer');
   const url = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${apiKey}`;
@@ -33,4 +41,4 @@ export async function displayGifDetails(gifId) {
     console.error('Error fetching GIF details:', error);
     detailsContainer.textContent = 'Failed to load GIF details.';
   }
-}
+};

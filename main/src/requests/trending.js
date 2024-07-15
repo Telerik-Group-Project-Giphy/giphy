@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const trendingButton = document.getElementById("trending-button");
     const gifContainer = document.getElementById("gifContainer");
     
+    /**
+     * Fetches trending GIF data from Giphy API.
+     * @returns {Promise} A Promise that resolves with the fetched GIF data.
+     */
     const loadTrending = async () => {
         try {
             const response = await fetch(`https://api.giphy.com/v1/gifs/trending/?api_key=${apiKey}`)

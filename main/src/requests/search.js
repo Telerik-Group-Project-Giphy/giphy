@@ -12,7 +12,11 @@ searchButton.addEventListener('click', async () => {
        searchInput.value = '';
     }
 });
-
+/**
+ * Fetches GIF data from Giphy API based on the provided query.
+ * @param {string} query - The search query string.
+ * @returns {Promise} A Promise that resolves with the fetched GIF data.
+ */
 async function fetchSearchingGifs(query) {
 
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}`;
@@ -28,4 +32,4 @@ async function fetchSearchingGifs(query) {
         console.error('Error fetching GIFs:', error);
         gifContainer.textContent = 'Failed to load GIFs.';
     }
-}
+};

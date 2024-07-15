@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
+     /**
+     * Uploads the selected GIF file to Giphy.
+     * @param {File} file - The GIF file to upload.
+     * @returns {Promise} A Promise that resolves when the upload is complete.
+     */
     async function uploadGif(file) {
       const formData = new FormData();
       formData.append('file', file);

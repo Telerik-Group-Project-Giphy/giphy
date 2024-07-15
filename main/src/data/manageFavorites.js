@@ -1,6 +1,11 @@
 import { addImageListener } from "../events/gifdetails.js";
 import { createGifElement, createGifImage } from "../views/renderContainers.js";
 
+/**
+ * Adds a GIF to the favorites list in localStorage.
+ * @param {string} gifId - The ID of the GIF to add to favorites.
+ * @returns {Promise} A Promise that resolves after updating the favorites list.
+ */
 export async function addToFavorites(gifId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (!favorites.includes(gifId)) {
@@ -12,6 +17,11 @@ export async function addToFavorites(gifId) {
     }
 }
 
+/**
+ * Displays favorite GIFs in the GIF container.
+ * @param {string} apiKey - The API key for Giphy API requests.
+ * @returns {Promise} A Promise that resolves after displaying favorite GIFs.
+ */
 export async function displayFavorites(apiKey) {
     const gifContainer = document.getElementById('gifContainer');
     gifContainer.innerHTML = '';
@@ -47,11 +57,22 @@ export async function displayFavorites(apiKey) {
     }
 }
 
+/**
+ * Checks if a GIF with the given ID is in the favorites list.
+ * @param {string} gifId - The ID of the GIF to check.
+ * @returns {boolean} Returns true if the GIF is in favorites, false otherwise.
+ */
 export function isFavorite(gifId) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     return favorites.includes(gifId);
 }
 
+/**
+ * Toggles the favorite status of a GIF.
+ * If the GIF is already in favorites, it removes it; otherwise, it adds it.
+ * @param {string} gifId - The ID of the GIF to toggle favorite status for.
+ * @returns {void}
+ */
 export function toggleFavorite(gifId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (favorites.includes(gifId)) {
