@@ -32,7 +32,9 @@ export async function displayGifDetails(gifId) {
     const gif = data.data;
     detailsContainer.innerHTML = `
           <h3>GIF Details</h3>
-          <p><strong>Username:</strong> ${gif.username || 'N/A'} ${gifId}</p>
+          <p><strong>By </strong> ${gif.username || 'N/A'}</p>
+          <p><strong>Gif title: ${gif.title || 'N/A'}</p>
+          <p><strong>Uploaded on: ${gif.import_datetime}</p>
           <img src="${gif.images.fixed_height.url}" alt="GIF">
         `;
     gifContainer.appendChild(createFavoriteButton(gifId));
