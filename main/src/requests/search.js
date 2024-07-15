@@ -9,6 +9,7 @@ searchButton.addEventListener('click', async () => {
     if (inputValue) {
        const data = await fetchSearchingGifs(inputValue);
        transferToHTML(data);
+       searchInput.value = '';
     }
 });
 
@@ -23,7 +24,6 @@ async function fetchSearchingGifs(query) {
         }
         const fetchedData = await response.json();
         return fetchedData;
-
     } catch (error) {
         console.error('Error fetching GIFs:', error);
         gifContainer.textContent = 'Failed to load GIFs.';
