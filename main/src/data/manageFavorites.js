@@ -1,4 +1,5 @@
 import { addImageListener } from "../events/gifdetails.js";
+import { fetchRandomGif } from "../requests/random.js";
 import { createGifElement, createGifImage } from "../views/renderContainers.js";
 
 /**
@@ -28,7 +29,7 @@ export async function displayFavorites(apiKey) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     if (favorites.length === 0) {
-        gifContainer.textContent = 'No favorite GIFs found.';
+        fetchRandomGif();
         return;
     }
 
