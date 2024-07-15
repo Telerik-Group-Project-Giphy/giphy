@@ -3,7 +3,6 @@ import { apiKey } from "../common/common.js";
 document.addEventListener('DOMContentLoaded', () => {
     const gifFileInput = document.getElementById('gifFile');
     const uploadGifButton = document.getElementById('uploadGif');
-    const uploadStatus = document.getElementById('uploadStatus');
 
     uploadGifButton.addEventListener('click', () => {
       const file = gifFileInput.files[0];

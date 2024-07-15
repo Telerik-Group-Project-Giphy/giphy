@@ -29,12 +29,3 @@ async function fetchSearchingGifs(query) {
         gifContainer.textContent = 'Failed to load GIFs.';
     }
 }
-
-//not sure if needed v.manin
-
-// searchButton.addEventListener('click', () => {
-//     const inputValue = searchInput.value;
-//     if (inputValue) {
-//         fetchSearchingGifs(inputValue);
-//     }
-// });
