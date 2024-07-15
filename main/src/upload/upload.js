@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
           storedGifIds = [gifId];
         }
         localStorage.setItem('uploadedGifIds', storedGifIds.join(','));
-        uploadStatus.textContent = 'GIF uploaded successfully!';
+        alert(`Upload successful! GIF ID: ${data.data.id}`);
       } catch (error) {
         console.error('Error uploading GIF:', error);
-        uploadStatus.textContent = 'Failed to upload GIF.';
+        alert('Error uploading GIF:', error);
       }
     }
   });
