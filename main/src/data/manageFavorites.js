@@ -1,4 +1,5 @@
 import { addImageListener } from "../events/gifdetails.js";
+import { createGifElement, createGifImage } from "../views/renderContainers.js";
 
 export async function addToFavorites(gifId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -33,22 +34,27 @@ export async function displayFavorites(apiKey) {
                 })
                 .then(data => {
                     const gif = data.data;
-                    const img = document.createElement('img');
-                    img.src = gif.images.fixed_height.url;
-                    img.dataset.gifId = gif.id;
-
-                    const addToFavoritesButton = document.createElement('button');
-                    addToFavoritesButton.className = 'favorite-button';
-                    addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
-                    addToFavoritesButton.addEventListener('click', () => {
-                        toggleFavorite(gif.id);
-                        addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
-                    });
-                    const gifWrapper = document.createElement('div');
-                    gifWrapper.appendChild(img);
-                    gifWrapper.appendChild(addToFavoritesButton);
-                    gifContainer.appendChild(gifWrapper);
+                    const img = createGifImage(gif);
+                    createGifElement(gif, gifContainer, img);
                 });
+                // .then(data => {
+                //     const gif = data.data;
+                //     const img = document.createElement('img');
+                //     img.src = gif.images.fixed_height.url;
+                //     img.dataset.gifId = gif.id;
+
+                //     const addToFavoritesButton = document.createElement('button');
+                //     addToFavoritesButton.className = 'favorite-button';
+                //     addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
+                //     addToFavoritesButton.addEventListener('click', () => {
+                //         toggleFavorite(gif.id);
+                //         addToFavoritesButton.textContent = isFavorite(gif.id) ? 'Remove from Favorites' : 'Add to Favorites';
+                //     });
+                //     const gifWrapper = document.createElement('div');
+                //     gifWrapper.appendChild(img);
+                //     gifWrapper.appendChild(addToFavoritesButton);
+                //     gifContainer.appendChild(gifWrapper);
+                // });
         });
 
         await Promise.all(gifPromises);
