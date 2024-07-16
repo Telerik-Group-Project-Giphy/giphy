@@ -11,6 +11,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "eslint": "^9.6.0"
+    "init": "^0.1.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0"
   }
 }
