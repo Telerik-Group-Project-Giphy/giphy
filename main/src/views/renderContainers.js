@@ -49,7 +49,7 @@ export function createGifImage(gif) {
  * Transfers the fetched GIFs to HTML and displays them.
  * @param {Object} data - The data object containing GIFs.
  */
-export const transferToHTML = (data) => {
+export const transferToHTML = (data, gifContainer) => {
     gifContainer.innerHTML = '';
     data.data.forEach(gif => {
         const img = createGifImage(gif);
