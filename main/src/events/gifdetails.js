@@ -1,5 +1,5 @@
-import { apiKey } from "../common/common.js";
-import { createFavoriteButton } from "../views/renderContainers.js";
+import { apiKey, EMPTY_HEART, FULL_HEART } from "../common/common.js";
+import { isFavorite } from "../data/manageFavorites.js";
 
 /**
  * Attaches click event listeners to all <img> elements to display GIF details.
@@ -31,14 +31,14 @@ export async function displayGifDetails(gifId) {
     const data = await response.json();
     const gif = data.data;
     detailsContainer.innerHTML = `
+          <div id="details-container">
           <h3>GIF Details</h3>
-          <p><strong>By </strong> ${gif.username || 'N/A'}</p>
-          <p><strong>Gif title: ${gif.title || 'N/A'}</p>
-          <p><strong>Uploaded on: ${gif.import_datetime}</p>
+          <p>By ${gif.username || 'N/A'}</p>
+          <p>Gif title: ${gif.title || 'N/A'}</p>
+          <p>Uploaded on: ${gif.import_datetime}</p>
           <img src="${gif.images.fixed_height.url}" alt="GIF">
-        `;
-    gifContainer.appendChild(createFavoriteButton(gifId));
-
+        <button id="favourite-btn-${gifId}" class="favorite-button">${isFavorite(gifId) ? FULL_HEART : EMPTY_HEART}</button>
+        </div>`;
   } catch (error) {
     console.error('Error fetching GIF details:', error);
     detailsContainer.textContent = 'Failed to load GIF details.';
