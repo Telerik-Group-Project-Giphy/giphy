@@ -1,104 +1,57 @@
 body {
-  background: linear-gradient(to bottom right, green, darkgreen, black);
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 85, 1) 0%, 
+    rgba(35, 45, 135, 1) 10%,
+    rgba(88, 21, 132, 1) 32%,
+    rgba(145, 14, 115, 1) 50%,
+    rgba(185, 125, 1, 1) 100%
+  );
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
-#app {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-#header-div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#search-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#search {
-  width: 300px;
-  padding: 5px;
-}
-
-#search-button {
-  padding: 5px 10px;
-}
-
-#trending-button {
-  font-size: 24px;
-  padding: 10px 20px;
-  align-items: left;
-  order: -1;
-}
-
-#nav-id {
-  position: absolute;
-  top: 60px; 
-  left: 0;
-  width: 200px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 5; 
-}
-
-#nav-id button,
-#nav-id input {
-  margin-bottom: 10px;
-}
-
-#nav-id button:not(#trending-button) {
-  font-size: 16px;
-  padding: 5px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 #gifContainer {
-  margin: 80px 0 20px 220px; 
   display: grid;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  grid-template-columns: auto auto auto;
-  padding: 30px;
-}
-
-#gifContainer img {
-  display: block;
-  max-width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  text-align: center;
+  background: linear-gradient(to bottom right, violet, purple, black);
+  background-color: purple;
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 80px;
 }
 
 #gifContainer div {
   position: relative;
+  text-align: center;
+  background-color: purple;
+
+  padding: 5px; 
+  border: 1px solid black;
 }
 
-#gifContainer div .favorite-button {
+#gifContainer div img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+#gifContainer .favorite-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   font-size: 20px;
   border: none;
@@ -112,17 +65,46 @@ body {
   justify-content: center;
 }
 
-#gifContainer div .favorite-button:hover {
+#gifContainer .favorite-button:hover {
   box-shadow: 2px 2px #666;
   transform: translateY(4px);
 }
 
-footer {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
+#header-div {
+  background: blue;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid rgb(155, 65, 95);
+  align-items: center;
+}
+
+#trending-button {
+  padding: 10px 20px; 
+  margin-left: 20px; 
+}
+
+#search-container button {
+  padding: 15px 30px; /* Increase padding to make buttons larger */
+  font-size: 16px; /* Adjust font size */
+  background-color: rgb(155, 155, 108); /* Set background color */
+  color: white; /* Set text color */
+  border: 1px solid black;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#search-container button:hover {
+  background-color: #45a049; /* Darken background color on hover */
+}
+
+#about-us {
+  padding: 10px 20px;
+  background-color: beige;
+  color: white;
+  border: none;
   border-radius: 5px;
-  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
