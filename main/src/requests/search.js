@@ -1,18 +1,4 @@
-import { transferToHTML } from "../views/renderContainers.js";
 import { apiKey } from "../common/common.js";
-
-// const searchButton = document.getElementById("search-button");
-// const searchInput = document.getElementById("search");
-
-// searchButton.addEventListener('click', async () => {
-//     const inputValue = searchInput.value;
-//     if (inputValue) {
-//        const data = await fetchSearchingGifs(inputValue);
-//        transferToHTML(data);
-//        searchInput.value = '';
-//     }
-// });
-
 
 /**
  * Fetches GIF data from Giphy API based on the provided query.
