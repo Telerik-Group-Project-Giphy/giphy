@@ -1,4 +1,4 @@
-import {toggleFavorite, displayFavorites, isFavorite, addToFavorites} from "./data/manageFavorites.js"
+import {toggleFavorite, displayFavorites, isFavorite } from "./data/manageFavorites.js"
 import { transferToHTML } from "./views/renderContainers.js";
 import { loadTrending } from "./requests/trending.js";
 import {apiKey, EMPTY_HEART, FULL_HEART} from "./common/common.js";

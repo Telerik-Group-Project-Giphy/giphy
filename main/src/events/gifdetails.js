@@ -4,7 +4,7 @@ import { isFavorite } from "../data/manageFavorites.js";
 /**
  * Attaches click event listeners to all <img> elements to display GIF details.
  */
-export function addImageListener(gifId) {
+export function addImageListener() {
   const images = document.getElementsByTagName('img')
 
   for (let i = 0; i < images.length; i++) {
