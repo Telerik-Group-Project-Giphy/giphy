@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { addImageListener } from "../events/gifdetails.js";
 import { apiKey } from "../common/common.js";
 import { createGifElement, createGifImage } from "../views/renderContainers.js";

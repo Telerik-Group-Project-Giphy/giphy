@@ -16,7 +16,6 @@ export const loadTrending = async (gifContainer) => {
         return fetchedData;
     } catch (error) {
         console.error('Error fetching GIFs:', error);
-        //const gifContainer = document.getElementById("gifContainer");
         gifContainer.textContent = 'Failed to load GIFs.';
     }
 };
