@@ -16,8 +16,8 @@ You can also upload a gif directly from your device by clicking on the 'choose f
 # Search
 You can also find a search field and a search button, where you can find gifs related to your search input.
 
-# About us
-This page shows information regarding the app and also the authors of the project.
-
 # Gif details
 When you click on any gif you will be sent to a page containing more details regarding the selected gif such as name of the user that who uploaded the gif, the name of the gif itself and the date that it was uploaded.
+
+# About us
+This page shows information regarding the app and also the authors of the project.
